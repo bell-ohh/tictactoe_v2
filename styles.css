@@ -75,7 +75,7 @@ main {
 }
 
 
-#vs-cpu {
+.vs-cpu {
     background-color: var(--yellow-500);
     box-shadow: 0 10px var(--yellow-700);
 }
@@ -355,7 +355,7 @@ img {
 
 
 .turn-icon {
-    width: 25px;
+    width: 1.563rem;
     height: 28px;
 }
 

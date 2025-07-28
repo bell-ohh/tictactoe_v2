@@ -141,7 +141,7 @@ function cpuMove() {
 }
 
 function checkWinner() {
-    for (let combo of winCombos) {
+    for (const combo of winCombos) {
         const [a, b, c] = combo;
         const pos1 = tiles[a].dataset.val;
         const pos2 = tiles[b].dataset.val;
