@@ -14,6 +14,7 @@
     --blue-400: #31C3BD;
     --blue-500: #20918d;
     --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    --bgalt1: rgba(17, 27, 34, 0.6)
 }
 
 body {
@@ -47,7 +48,7 @@ main {
 
 }
 
-#pick-container {
+.pick-container {
     background-color: var(--navy-800);
     padding: 1rem;
     border-radius: 16px;
@@ -158,7 +159,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-inline-start: 2rem;
 }
 
 
@@ -211,7 +212,7 @@ main {
 #confirm-restart,
 #display-winner {
     height: 100vh;
-    background-color: rgba(17, 27, 34, 0.6);
+    background-color: var(--bgalt1);
     position: absolute;
     inset: 0;
     display: none;
@@ -224,7 +225,7 @@ main {
     background-color: var(--navy-800);
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
     height: 35vh;
     width: 100vh;
     max-height: 500px;
@@ -292,19 +293,19 @@ main {
     font-size: 1.125rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
 }
 
 #remember {
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
 }
 
 
 #turn-container p {
     color: var(--grey-400);
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
     margin: 0;
 }
 
