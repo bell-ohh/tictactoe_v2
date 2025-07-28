@@ -1,5 +1,5 @@
 let player1Mark = "";
-let player2Mark = "";
+const player2Mark = "";
 let xScore = 0;
 let oScore = 0;
 let ties = 0;
@@ -20,7 +20,7 @@ const vsPlayerBttn = document.querySelector("#vs-player");
 const selectX = document.querySelector("#select-x");
 const selectO = document.querySelector("#select-o");
 const main = document.querySelector("main");
-const mainMenu = document.querySelector("#main-menu");
+const mainMenu = document.querySelector(".main-menu");
 
 // Game Board Elements
 const boardContainer = document.querySelector("#board-container");
