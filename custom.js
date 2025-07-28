@@ -1,11 +1,9 @@
 let player1Mark = "";
-const player2Mark = "";
 let xScore = 0;
 let oScore = 0;
 let ties = 0;
 let currentTurn = "X";
 let soloGame;
-const roundOver = false;
 let wonGame = false;
 
 const winCombos = [
@@ -15,7 +13,7 @@ const winCombos = [
 ];
 
 // Main Menu Elements
-const vsCpuBttn = document.querySelector(".vs-cpu");
+const vsCpuBttn = document.getElementById("vs-cpu");
 const vsPlayerBttn = document.querySelector("#vs-player");
 const selectX = document.querySelector("#select-x");
 const selectO = document.querySelector("#select-o");
@@ -89,7 +87,7 @@ selectO.addEventListener("click", () => {
 restartBttn.addEventListener("click", confirmRestartGame);
 cancelRestartBttn.addEventListener("click", cancelRestartGame);
 confirmRestartBttn.addEventListener("click", restartGame);
-quitBttn.addEventListener("click", restartGame);
+quitBttn.addEventListener("click", returnToMainMenu);
 nextRoundBttn.addEventListener("click", nextRound);
 
 tiles.forEach((tile) => {
@@ -108,9 +106,7 @@ tiles.forEach((tile) => {
 });
 
 function markTile(tile, mark) {
-    if (!tile) {
-        return;
-    }
+    if (!tile) return;
 
     const icon = mark === "X" ? "icon-x.svg" : "icon-o.svg";
     tile.innerHTML = `<img src="assets/images/${icon}" alt="${mark} icon" class="icon">`;
@@ -119,7 +115,6 @@ function markTile(tile, mark) {
     updateTurnIcon();
     checkWinner();
 }
-
 
 function updateTurnIcon() {
     const icon = currentTurn === "X" ? "xmark-solid.svg" : "o-solid-grey.svg";
@@ -132,10 +127,16 @@ function enableGameboard() {
 
 function cpuMove() {
     if (wonGame) return;
+
     const availableCells = [...tiles].filter(tile => !tile.disabled);
+    if (availableCells.length === 0) return;
+
     const index = Math.floor(Math.random() * availableCells.length);
     const tile = availableCells[index];
     const mark = player1Mark === "X" ? "O" : "X";
+
+    if (!tile || tile.disabled) return;
+
     markTile(tile, mark);
     currentTurn = player1Mark;
 }
@@ -213,7 +214,6 @@ function cancelRestartGame() {
 function restartGame() {
     wonGame = false;
     soloGame = null;
-    player1Mark = "";
     currentTurn = "X";
     ties = xScore = oScore = 0;
 
@@ -236,6 +236,11 @@ function restartGame() {
     enableGameboard();
 }
 
+function returnToMainMenu() {
+    player1Mark = "";
+    restartGame();
+}
+
 function nextRound() {
     wonGame = false;
     displayWinnerEl.style.display = "none";
@@ -254,5 +259,6 @@ function resetTiles() {
         tile.innerHTML = "";
         tile.dataset.val = "";
         tile.style.backgroundColor = "#1F3641";
+        tile.disabled = false;
     });
 }
