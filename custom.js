@@ -15,7 +15,7 @@ const winCombos = [
 ];
 
 // Main Menu Elements
-const vsCpuBttn = document.querySelector("#vs-cpu");
+const vsCpuBttn = document.querySelector(".vs-cpu");
 const vsPlayerBttn = document.querySelector("#vs-player");
 const selectX = document.querySelector("#select-x");
 const selectO = document.querySelector("#select-o");
