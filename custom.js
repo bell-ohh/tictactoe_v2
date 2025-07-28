@@ -1,11 +1,11 @@
 let player1Mark = "";
-const player2Mark = "";
+let player2Mark = "";
 let xScore = 0;
 let oScore = 0;
 let ties = 0;
 let currentTurn = "X";
 let soloGame;
-let roundOver = false;
+const roundOver = false;
 let wonGame = false;
 
 const winCombos = [
