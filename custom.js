@@ -1,5 +1,5 @@
 let player1Mark = "";
-let player2Mark = "";
+const player2Mark = "";
 let xScore = 0;
 let oScore = 0;
 let ties = 0;

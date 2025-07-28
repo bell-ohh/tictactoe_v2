@@ -68,7 +68,7 @@ main {
 }
 
 
-#button-container {
+.button-container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -345,12 +345,12 @@ img {
 
 
 .hero-icon {
-    width: 40px;
+    width: 2.5rem;
 }
 
 
 .icon {
-    width: 40px;
+    width: 2.5rem;
 }
 
 
