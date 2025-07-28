@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Tic Tac Toe</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main>
+
+        <div id="main-menu">
+            <div id="hero">
+                <img src="assets/images/icon-x.svg" alt="x icon" class="icon">
+                <img src="assets/images/icon-o.svg" alt="x icon" class="icon">
+            </div>
+            <div id="pick-container">
+                <p id="pick-player">Pick Player 1's mark</p>
+                <div id="selecter">
+
+                    <img src="assets/images/xmark-solid.svg" alt="select x" id="select-x" class="icon">
+                    <img src="assets/images/o-solid.svg" alt="select o" id="select-o" class="icon">
+                </div>
+                <p id="remember">REMEMBER<span id="colon">:</span> X Goes First</p>
+            </div>
+            <div id="button-container">
+                <button id="vs-cpu" class="bttn">New Game (vs CPU)</button>
+                <button id="vs-player" class="bttn">New Game (vs player)</button>
+            </div>
+        </div>
+
+
+
+        <div id="board-container">
+            <div id="header-el">
+                <div id="game-hero">
+                    <img src="assets/images/icon-x.svg" alt="x icon" class="hero-icon">
+                    <img src="assets/images/icon-o.svg" alt="o icon" class="hero icon">
+                </div>
+
+                <div id="turn-container">
+                    <div id="turn">
+                        <img src="assets/images/xmark-solid.svg" class="turn-icon" alt="turn icon x">
+                    </div>
+                    <p>TURN</p>
+                </div>
+                <div id="restart-bttn-box">
+                    <img src="assets/images/icon-restart.svg" class="bttn" alt="restart button icon" id="restart-bttn">
+                </div>
+            </div>
+
+
+
+
+
+            <div id="game-board">
+
+
+                <button id="tile-one" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-two" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-three" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-four" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-five" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-six" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-seven" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-eight" class="tile" type="button" data="val" aria-label="Game tile"></button>
+                <button id="tile-nine" class="tile" type="button" data="val" aria-label="Game tile"></button>
+            </div>
+
+
+            <div id="scoreboard">
+
+                <div id="x-box" class="scoreboard-el">
+                    <p class="scoreboard-category">X ( <span id="x-player"></span>)</p>
+                    <p id="x-score" class="score"></p>
+                </div>
+
+                <div id="ties-box" class="scoreboard-el">
+                    <p class="scoreboard-category">TIES</p>
+                    <p id="total-ties" class="scores"></p>
+                </div>
+                <div id="o-box" class="scoreboard-el">
+                    <p class="scoreboard-category">&#9711 ( <span id="o-player"></span>)</p>
+                    <div id="o-score" class="scores"></div>
+                </div>
+            </div>
+
+
+
+            <div id="confirm-restart">
+                <div id="confirm-restart-box">
+                    <p>Restart Game?</p>
+
+                    <div id="confirm-restart-bttn-box">
+                        <button id="cancel-restart-bttn" type="button" class="bttn">NO, CANCEL</button>
+                        <button id="confirm-restart-bttn" type="button" class="bttn">YES, RESTART</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DISPLAY WINNER -->
+
+            <div id="display-winner">
+
+                <div id="display-winner-container">
+                    <p id="winner-message"></p>
+                    <div id="winning-container">
+                        <div id="winner">
+
+                        </div>
+                        <p id="winner-text"></p>
+                    </div>
+
+                    <div id="winner-buttons">
+                        <button id="quit-bttn" type="button" class="bttn">Quit</button>
+                        <button id="next-round-bttn" type="bttn" class="bttn">Next Round</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+     
+        </div>
+
+    </main>
+
+
+
+    <script src="custom.js"></script>
+</body>
+
+</html>
