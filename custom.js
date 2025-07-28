@@ -113,8 +113,8 @@ function markTile(tile, mark) {
         return;
     }
 
-    const icon = mark === "X" ? "assets/icon-x.svg" : "assets/icon-o.svg";
-    tile.innerHTML = `<img src="assets/${icon}" alt="${mark} icon" class="icon">`;
+    const icon = mark === "X" ? "assets/images/icon-x.svg" : "assets/images/icon-o.svg";
+    tile.innerHTML = `<img src="assets/images/${icon}" alt="${mark} icon" class="icon">`;
     tile.dataset.val = mark;
     tile.disabled = true;
     updateTurnIcon();
@@ -123,8 +123,8 @@ function markTile(tile, mark) {
 
 
 function updateTurnIcon() {
-    const icon = currentTurn === "X" ? "/ssets/xmark-solid.svg" : "assets/o-solid-grey.svg";
-    turnEl.innerHTML = `<img src="assets/${icon}" class="turn-icon" alt="">`;
+    const icon = currentTurn === "X" ? "assets/images/xmark-solid.svg" : "assets/images/o-solid-grey.svg";
+    turnEl.innerHTML = `<img src="assets/images/${icon}" class="turn-icon" alt="">`;
 }
 
 function enableGameboard() {
@@ -169,10 +169,10 @@ function checkWinner() {
 
 function highlightWin(combo, mark) {
     const color = mark === "X" ? "#65E9E4" : "#FFC860";
-    const outline = mark === "X" ? "assets/icon-x-outline.svg" : "assets/icon-o-outline.svg";
+    const outline = mark === "X" ? "assets/images/icon-x-outline.svg" : "assets/imges/icon-o-outline.svg";
     combo.forEach(index => {
         tiles[index].style.backgroundColor = color;
-        tiles[index].innerHTML = `<img src="assets/${outline}" alt="${mark} icon" class="icon">`;
+        tiles[index].innerHTML = `<img src="assets/images/${outline}" alt="${mark} icon" class="icon">`;
     });
 }
 
@@ -188,9 +188,9 @@ function updateScore(mark) {
 
 function displayWinMessage(mark) {
     const isPlayer = soloGame ? (mark === player1Mark ? "YOU WON!" : "OH NO, YOU LOST") : (mark === player1Mark ? "PLAYER 1" : "PLAYER 2");
-    const icon = mark === "X" ? "assets/icon-x.svg" : "assets/icon-o.svg";
+    const icon = mark === "X" ? "assets/images/icon-x.svg" : "assets/images/icon-o.svg";
     winnerMessage.textContent = soloGame ? isPlayer : `${isPlayer} WINS!`;
-    winnerEl.innerHTML = `<img src="assets/${icon}" alt="${mark} icon" class="icon">`;
+    winnerEl.innerHTML = `<img src="assets/images/${icon}" alt="${mark} icon" class="icon">`;
     winnerText.textContent = "TAKES THE ROUND";
     winnerText.style.color = mark === "X" ? "#31C3BD" : "#FFC860";
     displayWinnerEl.style.display = "flex";
